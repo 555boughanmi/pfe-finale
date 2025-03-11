@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*.app-container {
+  /* Autres styles 
+  background-image: url('./f1.png'); /* Remplacez le chemin par le chemin de votre image 
+  background-size: contain; /* Réduire la taille de l'image pour la contenir dans le conteneur 
+  background-position: center; /* Positionnez l'image au centre 
+  background-repeat: no-repeat;
+}*/
+.app-container {
+  display: flex; /* Utilisez un conteneur flexible pour diviser la page */
+  height: 100vh; /* Hauteur de la page */
+}
+
+.image-container {
+  flex: 1; /* Prendre 50% de l'espace disponible */
+  background-image: url('./f1.png'); /* Image de fond */
+  background-size: cover; /* Ajustez la taille de l'image pour couvrir tout le conteneur */
+}
+
+.alert-container {
+  flex: 1; /* Prendre 50% de l'espace disponible */
+  padding: 20px; /* Ajouter un peu de marge intérieure */
+}
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}

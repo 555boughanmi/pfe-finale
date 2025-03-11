@@ -1,0 +1,220 @@
+id_contrat,date_ouverture,date_cloture,type_offre,type_client,etat_ticket,sujet,type_incident,indisponibilité,dérangement,facturation,internet_fixe,"id_client	",MOIS
+contrat_11,7/18/2021,44396.43142,ADSL,Résidentiel,Clôturé,"Wifi > Changement paramètre (SSID, mot de passe, channel,…)",T,False,True,,True,173158,7
+contrat_12,9/10/2021,44451.41645,ADSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,321247,7
+contrat_13,9/15/2021,44454.66578,ADSL,Résidentiel,Clôturé,Résiliation : Suivi de la résiliation,NT,,,False,True,321247,7
+contrat_13,11/9/2021,44509.58397,VDSL,Résidentiel,Clôturé,Financier: Arrêt contrat,T,,,False,True,321247,7
+contrat_13,9/23/2021,44509.36854,VDSL,Résidentiel,Clôturé,Partenariat: Modem : Retour & paiement restant dû,T,,,False,True,321247,7
+contrat_13,11/6/2021,44508.3588,VDSL,Résidentiel,Clôturé,Partenariat: Suivi demande,T,,,False,True,222482,7
+contrat_13,9/2/2021,44550.45634,VDSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,264311,7
+contrat_13,9/2/2021,44441.55711,VDSL,Résidentiel,Clôturé,Gratuité: Geste commercial Rétention,NT,,,False,True,173158,7
+contrat_19,12/16/2021,44548.4114,VDSL,Pro,Clôturé,Financier: Arrêt contrat,NT,,,False,True,321247,7
+contrat_19,12/15/2021,44627.43881,VDSL,Pro,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,321247,7
+contrat_111,7/8/2021,44385.53921,VDSL,Pro,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,321247,7
+contrat_112,11/28/2021,44528.71278,ADSL,Pro,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,321247,7
+contrat_113,12/1/2021,44531.47332,ADSL,Pro,Clôturé,Pas de synchro > Problème de paiement facture TT,T,,,True,True,173158,7
+contrat_114,7/6/2021,44383.50404,ADSL,Pro,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,173158,7
+contrat_115,7/9/2021,44386.62766,ADSL,Pro,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,321247,7
+contrat_116,12/7/2021,44634.86594,ADSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,222482,7
+contrat_117,10/17/2021,44578.42593,ADSL,Pro,Clôturé,Pas de synchro >(Autres),T,True,True,,True,264311,7
+contrat_118,7/7/2021,44443.32084,ADSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,173158,7
+contrat_118,7/7/2021,44452.37991,ADSL,Résidentiel,Clôturé,Gratuité: Geste commercial Rétention,NT,,,False,True,321247,7
+contrat_120,9/22/2021,44461.70152,ADSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,321247,7
+contrat_121,8/3/2021,44411.49264,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,321247,7
+contrat_122,10/28/2021,44578.43125,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,173158,7
+contrat_123,7/27/2021,44404.44657,ADSL,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,321247,7
+contrat_124,7/30/2021,44407.44086,ADSL,Résidentiel,Clôturé,Financier: Arrêt contrat,NT,,,False,True,321247,7
+contrat_125,8/27/2021,44435.77271,ADSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,321247,7
+contrat_125,11/22/2021,44522.45529,ADSL,Résidentiel,Clôturé,Lenteur >(Autres),T,False,True,,True,321247,7
+contrat_127,10/29/2021,44498.34487,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,T,,,False,True,222482,7
+contrat_127,12/30/2021,44589.5711,ADSL,Résidentiel,Clôturé,Résiliation : Réception de la demande,T,,,False,True,264311,7
+contrat_129,12/13/2021,44544.42618,ADSL,Pro,Clôturé,Financier: Arrêt contrat,T,,,False,True,173158,7
+contrat_129,12/2/2021,44550.56105,ADSL,Pro,Clôturé,Résiliation: Demande de Résiliation,T,,,False,True,321247,7
+contrat_131,10/4/2021,44473.51641,ADSL,Pro,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,321247,7
+contrat_132,8/9/2021,44417.40865,ADSL,Pro,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,321247,7
+contrat_132,8/9/2021,44420.33816,ADSL,Pro,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,321247,7
+contrat_134,9/22/2021,44461.59531,ADSL,Pro,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,T,,,False,True,173158,7
+contrat_134,11/2/2021,44502.84919,ADSL,Résidentiel,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,173158,7
+contrat_136,9/9/2021,44578.40995,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,321247,7
+contrat_137,10/1/2021,44470.65179,ADSL,Résidentiel,Clôturé,Financier: Arrêt contrat,NT,,,False,True,222482,7
+contrat_137,9/27/2021,44470.40063,ADSL,Résidentiel,Clôturé,Partenariat: Modem : Retour & paiement restant dû,NT,,,False,True,264311,7
+contrat_137,9/27/2021,44550.46208,ADSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,173158,7
+contrat_140,12/15/2021,44545.46465,ADSL,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,321247,7
+contrat_141,11/28/2021,44528.46122,ADSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,321247,7
+contrat_142,10/20/2021,44578.4265,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,321247,7
+contrat_143,11/23/2021,44676.40863,ADSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_144,10/2/2021,44471.4791,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_144,7/30/2021,44407.39956,ADSL,Résidentiel,Clôturé,Déconnexion > Sans perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_146,8/19/2021,44427.54521,ADSL,Résidentiel,Clôturé,Pas de synchro > Problème de paiement facture TT,NT,,,True,True,,7
+contrat_147,9/25/2021,44840.5574,ADSL,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_148,9/16/2021,44455.33931,ADSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_149,8/6/2021,44483.45549,VDSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_150,8/5/2021,44456.38334,VDSL,Pro,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_151,12/27/2021,44557.42898,VDSL,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_152,7/3/2021,44380.42399,VDSL,Pro,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_153,11/16/2021,44676.40719,VDSL,Pro,Clôturé,Synchro pas d’accès > Problème Authentification (codes d’accès),T,True,True,,True,,7
+contrat_154,7/19/2021,44396.35263,VDSL,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_154,12/15/2021,44545.67461,VDSL,Pro,Clôturé,Déconnexion > Sans perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_156,12/29/2021,44559.28928,VDSL,Pro,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_157,11/10/2021,44587.70287,VDSL,Pro,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_157,11/12/2021,44840.55896,VDSL,Pro,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_159,9/25/2021,44578.41157,VDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_160,9/14/2021,44578.41036,VDSL,Résidentiel,Clôturé,Wifi > Problème de portée (signal wifi),T,False,True,,True,,7
+contrat_161,7/29/2021,44439.31535,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_162,11/22/2021,44676.40858,VDSL,Résidentiel,Clôturé,Synchro pas d’accès >(Autres),T,True,True,,True,,7
+contrat_163,10/4/2021,44501.68124,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_164,9/27/2021,44466.47293,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,,7
+contrat_165,9/22/2021,44461.55801,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_165,11/27/2021,44620.41928,VDSL,Pro,Clôturé,Lenteur > Débit non conforme (problème ligne TT),T,False,True,,True,,7
+contrat_165,8/2/2021,44411.49833,VDSL,Pro,Clôturé,Gratuité: Geste commercial suite Prob Technique,NT,,,False,True,,7
+contrat_165,12/18/2021,44550.39712,VDSL,Pro,Clôturé,Gratuité: Geste commercial suite Prob Technique,NT,,,False,True,,7
+contrat_165,7/31/2021,44410.41326,VDSL,Pro,Clôturé,Résiliation : Suivi de la résiliation,T,,,False,True,,7
+contrat_165,11/2/2021,44502.63464,VDSL,Pro,Clôturé,Résiliation : Suivi de la résiliation,T,,,False,True,,7
+contrat_165,12/16/2021,44546.59559,VDSL,Pro,Clôturé,Résiliation : Suivi de la résiliation,T,,,False,True,,7
+contrat_165,7/28/2021,44410.414,VDSL,Pro,Clôturé,Résiliation: Demande de Résiliation,T,,,False,True,,7
+contrat_165,11/1/2021,44555.32884,VDSL,Pro,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_174,11/26/2021,44628.52256,VDSL,Pro,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_175,7/19/2021,44572.56757,VDSL,Pro,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,,7
+contrat_176,11/24/2021,44676.40881,VDSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_176,11/23/2021,44523.69462,VDSL,Résidentiel,Clôturé,"Wifi > Changement paramètre (SSID, mot de passe, channel,…)",T,False,True,,True,,7
+contrat_178,10/21/2021,44572.58291,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_179,11/5/2021,44505.43456,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_180,7/31/2021,44408.4084,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_180,8/2/2021,44468.36503,VDSL,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_182,8/3/2021,44411.52633,VDSL,Résidentiel,Ouvert,Partenariat: Modem : Retour Sans paiement,NT,,,False,True,,7
+contrat_183,8/16/2021,44578.40694,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_184,11/11/2021,44676.40615,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_185,11/26/2021,44526.41817,VDSL,Résidentiel,Clôturé,Wifi >(Autres),T,False,True,,True,,7
+contrat_186,7/14/2021,44391.78789,VDSL,Résidentiel,Clôturé,"Wifi > Changement paramètre (SSID, mot de passe, channel,…)",T,False,True,,True,,7
+contrat_187,11/3/2021,44503.7961,VDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_187,12/9/2021,44539.5265,VDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_189,11/9/2021,44676.40597,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_189,12/20/2021,44550.49965,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème de paiement facture TT,NT,,,True,True,,7
+contrat_191,7/8/2021,44385.84551,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_192,11/15/2021,44515.46611,VDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_192,10/24/2021,44493.42249,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,,7
+contrat_194,7/14/2021,44391.45836,VDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_195,12/7/2021,44537.54282,VDSL,Résidentiel,Clôturé,Routeur panne > Panne Hard,T,True,True,,True,,7
+contrat_195,10/8/2021,44477.61907,VDSL,Résidentiel,Clôturé,Navigation >(Autres),T,True,True,,True,,7
+contrat_197,8/16/2021,44424.42681,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_198,11/1/2021,44501.39248,VDSL,Résidentiel,Clôturé,Pas de synchro > Grésillement sur la ligne,T,True,True,,True,,7
+contrat_199,12/14/2021,44544.57591,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1100,11/30/2021,44530.48825,VDSL,Résidentiel,Clôturé,Pas de synchro > Problème de paiement facture TT,NT,,,True,True,,7
+contrat_1101,8/27/2021,44578.40839,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1102,8/25/2021,44455.57808,SDSL,Résidentiel,Clôturé,Pas de synchro >(Autres),T,True,True,,True,,7
+contrat_1103,7/29/2021,44406.48324,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,,7
+contrat_1104,12/13/2021,44627.46549,SDSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1105,8/12/2021,44578.40666,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1105,12/25/2021,44555.29878,SDSL,Résidentiel,Clôturé,Synchro pas d’accès >(Autres),T,True,True,,True,,7
+contrat_1107,8/6/2021,44452.59336,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1108,12/27/2021,44557.75389,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,,7
+contrat_1109,12/21/2021,44551.45051,SDSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1109,10/4/2021,44474.4374,SDSL,Résidentiel,Clôturé,Partenariat: prolongation provisoire d’échéance,NT,,,False,True,,7
+contrat_1111,8/25/2021,44433.51669,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1112,8/30/2021,44578.40851,SDSL,Résidentiel,Clôturé,Pas de synchro >(Autres),T,True,True,,True,,7
+contrat_1112,11/25/2021,44676.4091,SDSL,Résidentiel,Clôturé,"Lenteur > Débit non conforme (Installation interne, Alarme, Standard, Rallonge…)",T,False,True,,True,,7
+contrat_1114,11/11/2021,44511.59189,SDSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1115,12/30/2021,44655.79488,SDSL,Résidentiel,Clôturé,Pas de synchro >(Autres),T,True,True,,True,,7
+contrat_1115,9/7/2021,44446.5595,SDSL,Résidentiel,Clôturé,Partenariat: prolongation provisoire d’échéance,NT,,,False,True,,7
+contrat_1117,10/16/2021,44489.31,SDSL,Résidentiel,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1117,10/13/2021,44485.3659,SDSL,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1117,10/12/2021,44550.46318,SDSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1117,10/12/2021,44485.36586,SDSL,Résidentiel,Clôturé,Partenariat: Modem : Retour Sans paiement,NT,,,False,True,,7
+contrat_1121,8/18/2021,44426.48676,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1122,7/7/2021,44384.45481,SDSL,Résidentiel,Clôturé,"Lenteur > Débit non conforme (Installation interne, Alarme, Standard, Rallonge…)",T,False,True,,True,,7
+contrat_1123,11/2/2021,44565.73405,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1124,10/2/2021,44471.52183,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1125,7/10/2021,44460.58205,SDSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1126,11/26/2021,44536.60137,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,,7
+contrat_1126,12/3/2021,44534.42647,SDSL,Résidentiel,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1126,12/2/2021,44550.56106,SDSL,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1129,10/27/2021,44578.43084,SDSL,Résidentiel,Clôturé,Pas de synchro >(Autres),T,True,True,,True,,7
+contrat_1129,7/17/2021,44454.69534,SDSL,Résidentiel,Clôturé,Lenteur > Débit non conforme (problème ligne TT),T,False,True,,True,,7
+contrat_1131,12/21/2021,44551.45063,SDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_1132,9/10/2021,44488.39078,SDSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_1133,8/3/2021,44578.4033,SDSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1134,8/5/2021,44413.40383,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1135,8/26/2021,44434.52662,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1136,10/14/2021,44483.48683,SDSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1136,7/6/2021,44383.8115,SDSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_1136,11/5/2021,44676.40545,FTTH,Résidentiel,Clôturé,Lenteur >(Autres),T,False,True,,True,,7
+contrat_1139,10/30/2021,44499.31963,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1139,11/16/2021,44516.45597,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1139,7/23/2021,44578.40191,FTTH,Résidentiel,Clôturé,Lenteur > Débit non conforme (problème ligne TT),T,False,True,,True,,7
+contrat_1142,10/11/2021,45044.42038,FTTH,Pro,Clôturé,Partenariat: Modem : Retour & paiement restant dû,NT,,,False,True,,7
+contrat_1142,9/21/2021,44534.46715,FTTH,Pro,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1144,7/7/2021,44384.44609,FTTH,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1145,11/25/2021,44525.50983,FTTH,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1145,7/1/2021,44578.39838,FTTH,Pro,Clôturé,Lenteur > Débit non conforme (problème ligne TT),T,False,True,,True,,7
+contrat_1147,8/3/2021,44455.5472,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,,7
+contrat_1148,11/23/2021,44587.70747,FTTH,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_1149,12/28/2021,44558.61115,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_1149,9/27/2021,44466.58986,FTTH,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_1151,8/20/2021,44501.60395,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1151,11/24/2021,44524.43934,FTTH,Résidentiel,Clôturé,Gratuité: Geste commercial suite Prob Technique,NT,,,False,True,,7
+contrat_1151,11/4/2021,44505.40688,FTTH,Résidentiel,Clôturé,Résiliation : Rétention proactive,NT,,,False,True,,7
+contrat_1151,11/29/2021,44530.38523,FTTH,Résidentiel,Clôturé,Financier: Suivi demande,NT,,,False,True,,7
+contrat_1155,11/3/2021,44510.62315,FTTH,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1155,11/8/2021,44510.61985,FTTH,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1155,11/2/2021,44511.39331,FTTH,Résidentiel,Clôturé,Gratuité: Réctif date d’échéance suite Retard d’activation Ligne TT,NT,,,False,True,,7
+contrat_1158,7/7/2021,44384.50965,FTTH,Pro,Clôturé,Résiliation : Suivi de la résiliation,NT,,,False,True,,7
+contrat_1158,7/7/2021,44384.52029,FTTH,Pro,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1160,8/30/2021,44438.41764,FTTH,Pro,Ouvert,Partenariat: Proposition gratuité rétention TT,NT,,,False,True,,7
+contrat_1161,11/16/2021,44516.36472,FTTH,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1161,9/2/2021,44441.42102,FTTH,Pro,Clôturé,Routeur panne > Panne Hard,T,True,True,,True,,7
+contrat_1163,7/2/2021,44578.39844,FTTH,Résidentiel,Clôturé,Navigation >(Autres),T,True,True,,True,,7
+contrat_1164,9/29/2021,44468.65954,FTTH,Résidentiel,Clôturé,Financier: Prolongation provisoire d’échéance,NT,,,True,True,,7
+contrat_1164,10/4/2021,44473.38753,FTTH,Résidentiel,Clôturé,Financier: Réactivation Provisoire du contrat,NT,,,False,True,,7
+contrat_1166,9/8/2021,44447.4097,FTTH,Résidentiel,Clôturé,Résiliation : Suivi de la résiliation,NT,,,False,True,,7
+contrat_1166,9/8/2021,44447.53034,FTTH,Résidentiel,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1166,9/6/2021,44471.3998,FTTH,Résidentiel,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1169,8/17/2021,44578.40718,FTTH,Résidentiel,Clôturé,"Lenteur > Débit non conforme (Installation interne, Alarme, Standard, Rallonge…)",T,False,True,,True,,7
+contrat_1169,12/21/2021,44552.34155,FTTH,Pro,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1169,12/20/2021,44627.43892,FTTH,Pro,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1172,7/24/2021,44427.47352,FTTH,Pro,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1173,10/14/2021,44483.55081,FTTH,Pro,Clôturé,"Lenteur > Débit non conforme (Installation interne, Alarme, Standard, Rallonge…)",T,False,True,,True,,7
+contrat_1174,12/27/2021,44557.50394,FTTH,Pro,Clôturé,Lenteur > Débit non conforme (problème ligne TT),T,False,True,,True,,7
+contrat_1175,7/2/2021,44379.88551,FTTH,Pro,Clôturé,Pas de synchro > Problème Tonalité,T,True,True,,True,,7
+contrat_1176,7/5/2021,44382.43734,FTTH,Pro,Clôturé,Financier: Réactivation Provisoire du contrat,NT,,,False,True,,7
+contrat_1177,9/13/2021,44452.37984,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1177,11/18/2021,44522.4555,FTTH,Résidentiel,Clôturé,Gratuité: Geste commercial suite Prob Technique,NT,,,False,True,,7
+contrat_1179,11/9/2021,44509.50641,FTTH,Résidentiel,Clôturé,"Lenteur > Débit non conforme (Installation interne, Alarme, Standard, Rallonge…)",T,False,True,,True,,7
+contrat_1179,11/10/2021,44592.42042,FTTH,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_1179,11/12/2021,44512.55138,FTTH,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1182,11/26/2021,44526.77781,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème côté TT,T,True,True,,True,,7
+contrat_1183,7/23/2021,44400.68453,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1183,10/19/2021,44488.41521,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Auto Provisionning,T,True,True,,True,,7
+contrat_1185,12/20/2021,44551.38898,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1185,9/20/2021,44459.32157,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1187,12/11/2021,44541.39019,FTTH,Résidentiel,Clôturé,Pas de synchro >(Autres),T,True,True,,True,,7
+contrat_1188,11/29/2021,44620.42459,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1188,11/24/2021,44524.3895,FTTH,Résidentiel,Clôturé,Navigation >(Autres),T,True,True,,True,,7
+contrat_1188,11/18/2021,44518.41648,FTTH,Résidentiel,Clôturé,Partenariat: Réactivation Provisoire du contrat,NT,,,False,True,,7
+contrat_1188,8/17/2021,44425.46325,FTTH,Résidentiel,Clôturé,Partenariat: prolongation provisoire d’échéance,NT,,,False,True,,7
+contrat_1192,7/28/2021,44405.5491,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1193,10/31/2021,44500.80395,FTTH,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1194,9/4/2021,44463.65598,FTTH,Résidentiel,Clôturé,Lenteur >(Autres),T,False,True,,True,,7
+contrat_1195,10/4/2021,44473.71372,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1196,9/16/2021,44456.39337,FTTH,Résidentiel,Clôturé,Gratuité: Geste commercial réabonnement (fidélisation ancien client),NT,,,False,True,,7
+contrat_1197,10/20/2021,44489.58318,FTTH,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_1198,10/23/2021,44492.58973,FTTH,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1199,12/29/2021,44559.39318,ADSL,Résidentiel,Clôturé,Synchro pas d’accès >(Autres),T,True,True,,True,,7
+contrat_1200,8/28/2021,44456.68353,ADSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_1201,12/29/2021,44840.5576,ADSL,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1202,8/31/2021,44457.3572,ADSL,Résidentiel,Clôturé,Lenteur >(Autres),T,False,True,,True,,7
+contrat_1203,12/5/2021,44535.85633,ADSL,Résidentiel,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_1204,10/23/2021,44492.41235,ADSL,Résidentiel,Clôturé,Lenteur >(Autres),T,False,True,,True,,7
+contrat_1205,12/4/2021,44534.34429,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Problème configuration routeur,T,True,True,,True,,7
+contrat_1206,11/3/2021,44585.26632,ADSL,Résidentiel,Clôturé,Pas de synchro > Problème côté TT,T,True,True,,True,,7
+contrat_1206,8/30/2021,44438.40841,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7
+contrat_1206,10/29/2021,44839.66296,ADSL,Résidentiel,Clôturé,Partenariat: Réactivation contrat,NT,,,False,True,,7
+contrat_1206,11/3/2021,44840.55741,ADSL,Résidentiel,Clôturé,Partenariat: Suivi demande,NT,,,False,True,,7
+contrat_1210,12/24/2021,44676.41791,ADSL,Résidentiel,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1211,12/20/2021,44550.30713,ADSL,Pro,Clôturé,Pas de synchro > Problème de paiement facture TT,NT,,,True,True,,7
+contrat_1212,7/25/2021,44426.35123,ADSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1212,9/11/2021,44450.79346,ADSL,Pro,Clôturé,Lenteur > Taux de transfert  non-conforme,T,False,True,,True,,7
+contrat_1212,10/14/2021,44488.31744,ADSL,Pro,Clôturé,Financier: Arrêt contrat,NT,,,False,True,,7
+contrat_1212,10/14/2021,44550.46427,ADSL,Pro,Clôturé,Résiliation: Demande de Résiliation,NT,,,False,True,,7
+contrat_1216,8/12/2021,44578.40666,ADSL,Pro,Clôturé,Synchro pas d’accès > Auto Provisionning,T,True,True,,True,,7
+contrat_1217,9/14/2021,44453.43816,ADSL,Pro,Clôturé,Déconnexion > Avec perte de synchro (Problème côté TT),T,True,True,,True,,7
+contrat_1218,7/29/2021,44406.50353,ADSL,Résidentiel,Clôturé,Gratuité: Geste commercial réabonnement (fidélisation ancien client),NT,,,False,True,,7
+contrat_1219,11/10/2021,44510.43881,ADSL,Résidentiel,Clôturé,Synchro pas d’accès > Contrat suspendu côté Gnet,NT,,,False,True,,7

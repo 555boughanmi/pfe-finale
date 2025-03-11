@@ -1,0 +1,398 @@
+// correcte sans function
+app.post('/upload2', upload2.single('excelFile'), async (req, res) => {
+  try {
+      // Lecture du fichier Excel
+      const workbook = xlsx.readFile(req.file.path);
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const data = xlsx.utils.sheet_to_json(sheet, { header: 1 });
+      const username = req.body.username;
+
+      // Requête SQL pour insérer les données dans votre_table2
+      const sql = `INSERT INTO votre_table2 (
+          id_contrat, date_ouverture, date_cloture, type_offre, type_client, etat_ticket, 
+          sujet, type_incident, indisponibilite, derangement, facturation, 
+          internet_fixe, id_client, MOIS, Annee, userId	
+      ) VALUES ?`;
+
+      const values = data.slice(1).map(row => [...row.slice(0, 15), username]);
+
+      await new Promise((resolve, reject) => {
+          connection.query(sql, [values], (err, result) => {
+              if (err) {
+                  console.error('Erreur MySQL :', err.message);
+                  return reject(err);
+              }
+              console.log('Données insérées avec succès :', result);
+              resolve(result);
+          });
+      });
+
+      // Calcul des KPI
+      const mois = data[1][13];
+      console.log('mois :', mois);
+       //PRO
+       const kpi3_11_pro_SDSL = data.slice(1).filter(row => row[11] === 'True'&& row[3] === 'SDSL' && row[4] === 'Pro' ).length;
+       console.log('kpi3_11_pro_VDSL :', kpi3_11_pro_VDSL);
+   
+       const kpi_Pro_VDSL = data.slice(1).filter(row => row[11] === 'True' && row[5] === 'Clôturé' && row[7] === 'T' && row[3] === 'SDSL' && row[4] === 'Pro');
+       const KPI2_6_Pro_VDSL= kpi_Pro_SDSL.length;
+       console.log('kpi2.6 pro :', KPI2_6_Pro_SDSL);
+   
+       const { i_SDSL, j_SDSL, p_SDSL, m_SDSL } = kpi_Pro_SDSL.reduce((acc, row) => {
+         const duration = row[2] - row[1];
+   
+         if (duration < 1) acc.i_SDSL++;
+         else if (duration >= 1 && duration < 2) acc.j_SDSL++;
+         else if (duration >= 2 && duration < 3) acc.p_SDSL++;
+         else acc.m_SDSL++;
+         return acc;
+       }, { i_SDSL: 0, j_SDSL: 0, p_SDSL: 0, m_SDSL: 0 });
+   
+       const KPI2_2_Pro_SDSL = i_VDSL /KPI2_6_Pro_SDSL;
+       console.log('kpi2.2 pro :', KPI2_2_Pro_SDSL);
+
+       const KPI2_3_Pro_SDSL = j_SDSL /KPI2_6_Pro_SDSL ;
+       console.log('kpi2.3 pro :', KPI2_3_Pro_SDSL);
+
+       const KPI2_4_Pro_SDSL = p_SDSL /KPI2_6_Pro_SDSL ;
+       console.log('kpi2.4 pro :', KPI2_4_Pro_SDSL);
+
+       const KPI2_5_Pro_SDSL = m_SDSL  /KPI2_6_Pro_SDSL;
+       console.log('kpi2.5 pro :', KPI2_5_Pro_SDSL);
+
+   
+       const kpi3_11_Res_SDSL = data.slice(1).filter(row => row[11] === 'True'&& row[3] === 'SDSL' && row[4] === 'Résidentiel' ).length;
+       console.log('kpi3.11 Résidentiel :', kpi3_11_Res_SDSL);
+       
+        const kpi_Res_SDSL = data.slice(1).filter(row => row[11] === 'True' && row[5] === 'Clôturé' && row[7] === 'T' && row[3] === 'SDSL' && row[4] === 'Résidentiel');
+         const KPI2_6_Res_VDSL = kpi_Res_SDSL.length;
+           console.log('kpi2.6 Résidentiel :', KPI2_6_Res_SDSL);
+   
+       const { ir_SDSL, jr_SDSL, pr_SDSL, mr_SDSL } = kpi_Res_SDSL.reduce((acc, row) => {
+         const duration = row[2] - row[1];
+   
+         if (duration < 1) acc.ir_SDSL++;
+         else if (duration >= 1 && duration < 2) acc.jr_SDSL++;
+         else if (duration >= 2 && duration < 3) acc.pr_SDSL++;
+         else acc.mr_SDSL++;
+         return acc;
+       }, { ir_SDSL: 0, jr_SDSL: 0, pr_SDSL: 0, mr_SDSL: 0 });
+   
+       const KPI2_2_Res_SDSL = ir_SDSL / KPI2_6_Res_SDSL;
+       console.log('kpi2.2 Résidentiel :', KPI2_2_Res_SDSL);
+
+       const KPI2_3_Res_SDSL = jr_SDSL / KPI2_6_Res_SDSL;
+       console.log('kpi2.3 Résidentiel :', KPI2_3_Res_SDSL);
+
+       const KPI2_4_Res_SDSL = pr_SDSL / KPI2_6_Res_SDSL;
+       console.log('kpi2.4 Résidentiel :', KPI2_4_Res_VDSL);
+
+       const KPI2_5_Res_SDSL = mr_SDSL / KPI2_6_Res_SDSL;
+       console.log('kpi2.5 Résidentiel :', KPI2_5_Res_SDSL);
+
+
+      const insertQuery_VDSL = `INSERT INTO crm (
+          idfsi, Mois, Technologie, KPI3_11_Pro, KPI3_11_Res, KPI2_1_Pro, 
+          KPI2_1_Res, KPI2_2_Pro, KPI2_2_Res, KPI2_3_Pro, KPI2_3_Res, KPI2_4_Pro, 
+          KPI2_4_Res, KPI2_5_Pro, KPI2_5_Res, KPI2_6_Pro, KPI2_6_Res
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+      
+      const values_VDSL = [username, mois, 'SDSL', kpi3_11_pro_SDSL, kpi3_11_Res_SDSL, 0, 0, KPI2_2_Pro_SDSL, KPI2_2_Res_SDSL, KPI2_3_Pro_SDSL, KPI2_3_Res_SDSL, KPI2_4_Pro_SDSL, KPI2_4_Res_SDSL, KPI2_5_Pro_SDSL, KPI2_5_Res_SDSL, KPI2_6_Pro_SDSL, KPI2_6_Res_SDSL];
+      await new Promise((resolve, reject) => {
+          connection.query(insertQuery_VDSL, values_VDSL, (err, result) => {
+              if (err) {
+                  console.error('Erreur lors de l\'insertion de l\'utilisateur :', err);
+                  return reject(err);
+              }
+              resolve(result);
+          });
+      });
+
+      res.status(200).json({ message: 'Données insérées avec succès' });
+
+  } catch (error) {
+      console.error('Erreur serveur :', error);
+      res.status(500).json({ message: 'Erreur serveur', error: error.message });
+  }
+});
+///////////////////fin sans function
+
+
+
+
+
+
+
+
+/////// correcte avec function
+const processData = (data, technology, type) => {
+    const filteredData = data.slice(1).filter(row => row[11] === 'True' && row[3] === technology && row[4] === type);
+    const kpi3_11 = filteredData.length;
+    console.log('kpi3_11 :', kpi3_11);
+  
+    const kpi = filteredData.filter(row => row[5] === 'Clôturé' && row[7] === 'T');
+    const KPI2_6 = kpi.length;
+    console.log('kpi2_6 :', KPI2_6);
+  
+  
+    const { ik, jk, pk, mk } = kpi.reduce((acc, row) => {
+      const duration = row[2] - row[1];
+      if (duration < 1) acc.ik++;
+      else if (duration >= 1 && duration < 2) acc.jk++;
+      else if (duration >= 2 && duration < 3) acc.pk++;
+      else acc.mk++;
+      return acc; }, { ik: 0, jk: 0, pk: 0, mk: 0 });
+  
+    const KPI2_2 = ik / KPI2_6;
+    console.log('kpi2_2:', KPI2_2);
+    console.log('kpi2_2:', ik);
+  
+    const KPI2_3 = jk / KPI2_6;
+    console.log('kpi2_3 :', KPI2_3);
+    console.log('kpi2_3:', jk);
+  
+    const KPI2_4 = pk / KPI2_6;
+    console.log('kpi2_4 :', KPI2_4);
+    console.log('kpi2_4:', pk);
+  
+  
+    const KPI2_5 = mk / KPI2_6;
+    console.log('kpi2_5 :', KPI2_2);
+    console.log('kpi2_4:', mk);
+  
+  
+    return { kpi3_11, KPI2_6, KPI2_2, KPI2_3, KPI2_4, KPI2_5 };
+  };
+  const insertData = (connection, username, mois, technology, proData, resData) => {
+    const insertQuery = `INSERT INTO crm (
+      idfsi, Mois, Technologie, KPI3_11_Pro, KPI3_11_Res, KPI2_1_Pro, 
+      KPI2_1_Res, KPI2_2_Pro, KPI2_2_Res, KPI2_3_Pro, KPI2_3_Res, KPI2_4_Pro, 
+      KPI2_4_Res, KPI2_5_Pro, KPI2_5_Res, KPI2_6_Pro, KPI2_6_Res
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  
+    const values = [
+      username, mois, technology, proData.kpi3_11, resData.kpi3_11, 0, 0, 
+      proData.KPI2_2, resData.KPI2_2, proData.KPI2_3, resData.KPI2_3, 
+      proData.KPI2_4, resData.KPI2_4, proData.KPI2_5, resData.KPI2_5, 
+      proData.KPI2_6, resData.KPI2_6 ];
+  
+    connection.query(insertQuery, values, (err, result) => {
+      if (err) {
+        console.error('Erreur lors de l\'insertion de l\'utilisateur :', err);
+        return res.status(500).json({ message: 'Erreur serveur' });
+      }
+      res.status(200).json({ message: 'Données insérées avec succès' });
+    });
+  };
+  
+  const storage2 = multer.diskStorage({
+    destination: function (req, file, cb) { cb(null, path.join(__dirname, 'uploads2')); },
+    filename: function (req, file, cb) { cb(null, file.originalname);  }
+  });
+  
+  
+  
+  const upload2 = multer({ storage: storage2 });
+
+
+
+app.post('/upload2', upload2.single('excelFile'), async (req, res) => {
+  try {
+      // Lecture du fichier Excel
+      const workbook = xlsx.readFile(req.file.path);
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const data = xlsx.utils.sheet_to_json(sheet, { header: 1 });
+      const username = req.body.username;
+
+      // Requête SQL pour insérer les données dans votre_table2
+      const sql = `INSERT INTO votre_table2 (
+          id_contrat, date_ouverture, date_cloture, type_offre, type_client, etat_ticket, 
+          sujet, type_incident, indisponibilite, derangement, facturation, 
+          internet_fixe, id_client, MOIS, Annee, userId	
+      ) VALUES ?`;
+
+      const values = data.slice(1).map(row => [...row.slice(0, 15), username]);
+
+      await new Promise((resolve, reject) => {
+          connection.query(sql, [values], (err, result) => {
+              if (err) {
+                  console.error('Erreur MySQL :', err.message);
+                  return reject(err);
+              }
+              console.log('Données insérées avec succès :', result);
+              resolve(result);
+          });
+      });
+
+      // Calcul des KPI
+      const mois = data[1][13];
+      console.log('mois :', mois);
+      const technologies = ['SDSL', 'ADSL', 'VDSL', 'FTTH'];
+
+      technologies.forEach(technology => {
+        console.log( '********',technology );
+
+        console.log('Pro');
+
+        const proData = processData(data, technology, 'Pro');
+        console.log('Résidentiel');
+
+        const resData = processData(data, technology, 'Résidentiel');
+        insertData(connection, username, mois, technology, proData, resData);
+      });
+
+      res.status(200).json({ message: 'Données insérées avec succès' });
+
+  } catch (error) {
+      console.error('Erreur serveur :', error);
+      res.status(500).json({ message: 'Erreur serveur', error: error.message });
+  }
+});
+////////////////////////fin avec function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////
+const xlsx = require('xlsx');
+const mysql = require('mysql');
+const multer = require('multer');
+const path = require('path');
+
+// Configuration de Multer
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+const upload2 = multer({ storage });
+
+// Connexion MySQL
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'votre_db'
+});
+
+// Route pour l'upload de fichier
+app.post('/upload2', upload2.single('excelFile'), (req, res) => {
+    if (!req.file) {
+        return res.status(400).send('Aucun fichier envoyé.');
+    }
+
+    try {
+        // Lecture du fichier Excel
+        const workbook = xlsx.readFile(req.file.path);
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const data = xlsx.utils.sheet_to_json(sheet, { header: 1 });
+
+        if (data.length < 2) {
+            return res.status(400).send('Le fichier Excel est vide ou mal formaté.');
+        }
+
+        const username = req.body.username;
+
+        // Conversion des dates Excel en format lisible
+        function excelDateToJSDate(excelSerial) {
+            const date = new Date((excelSerial - 25569) * 86400000);
+            return date.toISOString().split('T')[0]; // Format YYYY-MM-DD
+        }
+
+        // Requête SQL
+        const sql = `INSERT INTO votre_table2 (
+            id_contrat, date_ouverture, date_cloture, type_offre, type_client, etat_ticket, 
+            sujet, type_incident, indisponibilite, derangement, facturation, 
+            internet_fixe, id_client, MOIS, Annee, userId	
+        ) VALUES ?`;
+
+        const values = data.slice(1).map(row => [
+            row[0],  // id_contrat
+            excelDateToJSDate(row[1]),  // date_ouverture
+            excelDateToJSDate(row[2]),  // date_cloture
+            row[3],  // type_offre
+            row[4],  // type_client
+            row[5],  // etat_ticket
+            row[6],  // sujet
+            row[7],  // type_incident
+            row[8],  // indisponibilite
+            row[9],  // derangement
+            row[10], // facturation
+            row[11], // internet_fixe
+            row[12], // id_client
+            row[13], // MOIS
+            row[14], // Annee
+            username  // userId
+        ]);
+
+        connection.query(sql, [values], (err, result) => {
+            if (err) {
+                console.error('Erreur MySQL :', err.message);
+                return res.status(500).send('Erreur lors de l\'insertion : ' + err.message);
+            }
+            console.log('Données insérées avec succès :', result);
+            res.status(200).send('Fichier traité et données insérées.');
+        });
+
+    } catch (error) {
+        console.error('Erreur lors du traitement du fichier :', error.message);
+        res.status(500).send('Erreur de traitement : ' + error.message);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

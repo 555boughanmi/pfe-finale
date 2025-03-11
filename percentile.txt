@@ -1,0 +1,102 @@
+Étape 1 : Extraire les durées
+const durations = kpi.map(row => row[2] - row[1]);
+
+Étape 2 : Calculer le percentile
+const calculatePercentile75 = (values) => {
+  if (values.length === 0) return 0; // Gestion du cas où il n'y a pas de données
+
+  // Trier les valeurs par ordre croissant
+  values.sort((a, b) => a - b);
+
+  // Calculer l'index correspondant au 75e percentile
+  const index = 0.75 * (values.length - 1);
+
+  // Si l'index est un entier, retourner la valeur correspondante
+  if (Number.isInteger(index)) {
+    return values[index];
+  }
+
+  // Sinon, interpoler entre les deux valeurs les plus proches
+  const lowerIndex = Math.floor(index);
+  const upperIndex = Math.ceil(index);
+  const lowerValue = values[lowerIndex];
+  const upperValue = values[upperIndex];
+  const interpolationFactor = index - lowerIndex;
+
+  return lowerValue + (upperValue - lowerValue) * interpolationFactor;
+};
+
+
+
+
+Étape 3 : Intégrer le 75e percentile dans votre code
+const processData = (data, technology, type) => {
+  const filteredData = data.slice(1).filter(row => row[11] === 'True' && row[4] === technology && row[3] === type);
+  const kpi3_11 = filteredData.length;
+
+  const kpi = filteredData.filter(row => row[5] === 'Clôturé' && row[7] === 'T');
+  const KPI2_6 = kpi.length;
+
+  // Extraire les durées
+  const durations = kpi.map(row => row[2] - row[1]);
+
+  // Calculer le 75e percentile
+  const percentile75 = calculatePercentile75(durations);
+
+  const { i, j, p, m } = kpi.reduce((acc, row) => {
+    const duration = row[2] - row[1];
+    if (duration < 1) acc.i++;
+    else if (duration >= 1 && duration < 2) acc.j++;
+    else if (duration >= 2 && duration < 3) acc.p++;
+    else acc.m++;
+    return acc;
+  }, { i: 0, j: 0, p: 0, m: 0 });
+
+  // Gestion de la division par zéro
+  const safeDivide = (numerator, denominator) => (denominator === 0 ? 0 : numerator / denominator);
+
+  const KPI2_2 = safeDivide(i, KPI2_6);
+  const KPI2_3 = safeDivide(j, KPI2_6);
+  const KPI2_4 = safeDivide(p, KPI2_6);
+  const KPI2_5 = safeDivide(m, KPI2_6);
+
+  return {
+    kpi3_11,
+    KPI2_6,
+    KPI2_2,
+    KPI2_3,
+    KPI2_4,
+    KPI2_5,
+    percentile75, // Ajout du 75e percentile
+  };
+};
+
+
+
+
+
+Étape 4 : Mettre à jour la fonction insertData
+const insertData = (connection, username, mois, technology, proData, resData, res) => {
+  const insertQuery = `INSERT INTO crm (
+    idfsi, Mois, Technologie, KPI3_11_Pro, KPI3_11_Res, KPI2_1_Pro, 
+    KPI2_1_Res, KPI2_2_Pro, KPI2_2_Res, KPI2_3_Pro, KPI2_3_Res, KPI2_4_Pro, 
+    KPI2_4_Res, KPI2_5_Pro, KPI2_5_Res, KPI2_6_Pro, KPI2_6_Res,
+    percentile75_Pro, percentile75_Res
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  const values = [
+    username, mois, technology, proData.kpi3_11, resData.kpi3_11, proData.percentile75, resData.percentile75,  
+    proData.KPI2_2, resData.KPI2_2, proData.KPI2_3, resData.KPI2_3, 
+    proData.KPI2_4, resData.KPI2_4, proData.KPI2_5, resData.KPI2_5, 
+    proData.KPI2_6, resData.KPI2_6,
+  ];
+
+  connection.query(insertQuery, values, (err, result) => {
+    if (err) {
+      console.error('Erreur lors de l\'insertion de l\'utilisateur :', err);
+      return res.status(500).json({ message: 'Erreur serveur' });
+    }
+    res.status(200).json({ message: 'Données insérées avec succès' });
+  });
+};
+
