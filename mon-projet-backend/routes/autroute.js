@@ -18,7 +18,7 @@ router.put('/accepter/:id', authController.accepter);
 router.post('/registerAdmin', authController.registerAdmin);
 
 
-router.put('/updatefsi/:id', authController.updateFSI);
+router.put('/updatefsi/:id', authController.updateFSI);//
 router.delete('/deletefsi/:id', authController.deleteFSI);
 router.get('/listfsi', authController.listFSI);
 //**router.post('/loginfsi', authController.loginFSI);

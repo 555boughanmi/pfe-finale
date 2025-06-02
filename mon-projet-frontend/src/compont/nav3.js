@@ -4,7 +4,8 @@ import Gestion from './gestion';
 import Upload from './upload';
 import Kpi from './kpi';
 import Home from './home';
-import Profile from './profileadm';
+//import Profile from './profileadm';
+import Profile from './profile';
 import Donner from './donner';
 import React, { useState } from 'react';
 

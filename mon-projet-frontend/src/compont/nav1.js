@@ -7,7 +7,8 @@ import Upload from './upload';
 import Kpi from './kpi';
 import Home from './home';
 import Gestad from './gestionad';
-import Profile from './profileadm';
+//import Profile from './profileadm';
+import Profile from './profile';
 import Donner from './donner';
 import React, { useState } from 'react';
 

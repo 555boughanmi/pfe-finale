@@ -793,7 +793,7 @@ app.post('/upload2', upload2.single('excelFile'), async (req, res) => {
     const annee = data[1][14];
 
     console.log('mois :', mois);
-    console.log('mois :', annee);
+    console.log('annee :', annee);
 
     const technologies = ['SDSL', 'ADSL', 'VDSL', 'FTTH'];
 

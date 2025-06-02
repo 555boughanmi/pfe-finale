@@ -1,0 +1,217 @@
+import React, { useState } from 'react';
+import { Card, Form, DropdownButton, Dropdown, Row, Col, Button, Table } from 'react-bootstrap';
+import axios from 'axios';
+import folderImage from './fsi.PNG';
+import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const SearchForm = ({ Username }) => {
+  const [idfsi] = useState(Username);
+  const [results, setResults] = useState([]);
+  const [selectedColumns, setSelectedColumns] = useState({
+    KPI3_11: false, KPI2_1: false, KPI2_2: false, KPI2_3: false,
+    KPI2_4: false, KPI2_5: false, KPI2_6: false,
+  });
+  const [columnSelection, setColumnSelection] = useState('both'); // 'pro', 'res', 'both'
+  const [selectedRow, setSelectedRow] = useState(null); // État pour stocker la ligne sélectionnée
+
+  const handleCheckboxChange = (columnName) => {
+    setSelectedColumns({
+      ...selectedColumns,
+      [columnName]: !selectedColumns[columnName],
+    });
+  };
+
+  const handleColumnSelection = (selection) => {
+    setColumnSelection(selection);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:4972/search', { idfsi });
+      setResults(response.data);
+    } catch (error) {
+      console.error('Erreur lors de la recherche:', error);
+    }
+  };
+
+  const handleReset = () => {
+    setSelectedColumns(Object.fromEntries(Object.keys(selectedColumns).map(key => [key, false])));
+    setColumnSelection('both');
+    setResults([]);
+    setSelectedRow(null); // Réinitialiser la ligne sélectionnée
+  };
+
+  // Fonction pour générer les données du graphique
+  const generateChartData = (row, type) => {
+    const labels = ['KPI 2.2', 'KPI 2.3', 'KPI 2.4', 'KPI 2.5', 'KPI 2.6'];
+    const data = labels.map((label, index) => {
+      const kpiKey = `KPI2_${index + 2}_${type}`; // Génère la clé (ex: KPI2_2_Pro)
+      return row[kpiKey] || 0; // Retourne la valeur ou 0 si non définie
+    });
+
+    return {
+      labels: labels.map(label => `${label} ${type}`),
+      datasets: [
+        {
+          label: `Valeur des KPIs (%) - ${type}`,
+          data: data,
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+          borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+          borderWidth: 5,
+        },
+      ],
+    };
+  };
+
+  return (
+    <div style={{ marginLeft: "20px" }}>
+      <Form onSubmit={handleSubmit}>
+        <Row>
+          <Col>
+            <Card style={{ width: '22rem', marginBottom: '20px' }}>
+              <Card.Img src={folderImage} alt="Folder Image" style={{ maxHeight: '150px' }} />
+              <Card.ImgOverlay>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Card.Title>KPI:</Card.Title>
+                  <DropdownButton variant="dark" title="Sélectionner">
+                    <Col sm="10">
+                      {Object.keys(selectedColumns).map((column) => (
+                        <label key={column} className="mr-2">
+                          <input
+                            type="checkbox"
+                            checked={selectedColumns[column]}
+                            onChange={() => handleCheckboxChange(column)}
+                          />
+                          {column}
+                        </label>
+                      ))}
+                    </Col>
+                  </DropdownButton>
+                </div>
+                <Card.Text>
+                  Sélectionnez les KPI à afficher.
+                </Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Col sm={{ span: 10, offset: 2 }}>
+              <Button type="submit" variant="warning">Rechercher</Button>
+              <Button variant="secondary" onClick={handleReset}>Réinitialiser</Button>
+            </Col>
+          </Col>
+
+          <Col>
+            <Col className="text-end" sm="10">
+              <Button variant={columnSelection === 'pro' ? 'warning' : 'secondary'} onClick={() => handleColumnSelection('pro')}>Pro</Button>
+              <Button variant={columnSelection === 'res' ? 'warning' : 'secondary'} onClick={() => handleColumnSelection('res')}>Res</Button>
+              <Button variant={columnSelection === 'both' ? 'warning' : 'secondary'} onClick={() => handleColumnSelection('both')}>Les deux</Button>
+            </Col>
+          </Col>
+        </Row>
+      </Form>
+
+      {results.length > 0 && (
+        <div>
+          <Table striped bordered hover size="sm">
+            <thead>
+              <tr>
+                <th>Mois</th>
+                <th>Technologie</th>
+                {Object.keys(selectedColumns).filter((column) => selectedColumns[column]).map((column) => (
+                  <React.Fragment key={column}>
+                    {columnSelection === 'both' && <th colSpan={2}>{column}</th>}
+                    {columnSelection === 'pro' && <th>{column} Pro</th>}
+                    {columnSelection === 'res' && <th>{column} Res</th>}
+                  </React.Fragment>
+                ))}
+                <th>Actions</th> {/* Nouvelle colonne pour le bouton */}
+              </tr>
+              {columnSelection === 'both' && (
+                <tr>
+                  <th></th>
+                  <th></th>
+                  {Object.keys(selectedColumns).filter((column) => selectedColumns[column]).map((column) => (
+                    <React.Fragment key={column}>
+                      <th>Pro</th>
+                      <th>Res</th>
+                    </React.Fragment>
+                  ))}
+                  <th></th> {/* Espace pour la colonne Actions */}
+                </tr>
+              )}
+            </thead>
+            <tbody>
+              {results.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.Mois}</td>
+                  <td>{row.Technologie}</td>
+                  {Object.keys(selectedColumns).filter((column) => selectedColumns[column]).map((column) => (
+                    <React.Fragment key={column}>
+                      {columnSelection === 'both' && (
+                        <>
+                          <td>{row[column + "_Pro"]}</td>
+                          <td>{row[column + "_Res"]}</td>
+                        </>
+                      )}
+                      {columnSelection === 'pro' && <td>{row[column + "_Pro"]}</td>}
+                      {columnSelection === 'res' && <td>{row[column + "_Res"]}</td>}
+                    </React.Fragment>
+                  ))}
+                  <td>
+                    <Button variant="primary" onClick={() => setSelectedRow(index)}>
+                      Afficher le graphique
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+
+          {/* Affichage du graphique pour la ligne sélectionnée */}
+          {selectedRow !== null && (
+            <div style={{ marginTop: '20px' }}>
+              <Button variant="secondary" onClick={() => setSelectedRow(null)}>
+                Masquer le graphique
+              </Button>
+              <h4>Graphiques pour {results[selectedRow].Mois} - {results[selectedRow].Technologie}</h4>
+              {columnSelection === 'pro' && (
+                <div>
+                  <h5>Graphique Pro</h5>
+                  <Doughnut data={generateChartData(results[selectedRow], 'Pro')} />
+                </div>
+              )}
+              {columnSelection === 'res' && (
+                <div>
+                  <h5>Graphique Res</h5>
+                  <Doughnut data={generateChartData(results[selectedRow], 'Res')} />
+                </div>
+              )}
+              {columnSelection === 'both' && (
+                <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                  <div>
+                    <h5>Graphique Pro</h5>
+                    <Doughnut data={generateChartData(results[selectedRow], 'Pro')} />
+                  </div>
+                  <div>
+                    <h5>Graphique Res</h5>
+                    <Doughnut data={generateChartData(results[selectedRow], 'Res')} />
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default SearchForm;
